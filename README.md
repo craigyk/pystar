@@ -29,7 +29,7 @@ STAR files are loaded and returned in standard built-in Python collections.  Con
       this is a multiline # this is a multiline 
       string with         # string with
       whitespaces         # whitespaces
-      '''
+      '''                 # ;
   }
   ...
 }
