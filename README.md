@@ -39,7 +39,7 @@ STAR values are converted to `float` if possible, otherwise they remain `str`.
   note: multiline STAR strings, and single or double quoted strings are handled correctly preserving whitespace
 
 A STAR document becomes a Python ordered dictionary where:
-  1) keys are block names ( `data_name` -> `name` )
+* 1) keys are block names ( `data_name` -> `name` )
   2) values are a Python ordered dictionary for each block
 
 A STAR block becomes a Python ordered dictionary that contains:
