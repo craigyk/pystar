@@ -38,19 +38,16 @@ STAR files are loaded and returned in standard built-in Python collections.  Con
 STAR values are converted to `float` if possible, otherwise they remain `str`.
   note: multiline STAR strings, and single or double quoted strings are handled correctly preserving whitespace
 
-A STAR document becomes a Python ordered dictionary where:
-* 1) keys are block names ( `data_name` -> `name` )
-  2) values are a Python ordered dictionary for each block
-
-A STAR block becomes a Python ordered dictionary that contains:
-  1) key: [str, float]
-  1) A string or float
-  2) A STAR frame
-  3) A STAR loop
-
-A STAR frame becomes a Python dictionary that contains:
-  1) key, value pairs
-  2) STAR loops
-
-A STAR loop becomes a numpy record array with the column names determined from the STAR loop fields
+* A STAR document becomes a Python ordered dictionary where:
+** values are blocks indexed by the block name
+*** repeated blocks in the STAR file will overwrite non-unique block keys 
+* A STAR block becomes a Python ordered dictionary that contains:
+** key, value pairs
+** frames (indexed by the frame name)
+** loops  (indexed by a tuple of the column names)
+* A STAR frame becomes a Python dictionary that contains:
+** key, value pairs
+** loops (indexed by a tuple of the column names)
+* A STAR loop becomes:
+** numpy record array with the column names determined from the STAR loop fields
   and the values converted to a string or float as appropriate.
