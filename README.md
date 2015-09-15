@@ -5,7 +5,7 @@ Tries to be as fast as possible while being fully compliant.
 
 STAR files are loaded and returned in standard built-in Python collections.  Conversions are as follows:
 
-top-level document is a dictionary of dictionaries
+```
 { 'block1': {             # data_block1
     'key1': 'value1',     # _key1 value1
     'key2': 1,            # _key2 1
@@ -33,6 +33,7 @@ top-level document is a dictionary of dictionaries
   }
   ...
 }
+```
 
 STAR values are converted to `float` if possible, otherwise they remain `str`.
   note: multiline STAR strings, and single or double quoted strings are handled correctly preserving whitespace
